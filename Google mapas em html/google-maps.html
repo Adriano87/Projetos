@@ -1,0 +1,48 @@
+		<!DOCTYPE html>
+		<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<title>Estudando google maps</title>
+		</head>
+		<body>
+
+			<h1>Google mapas</h1>
+
+			<div id="map" style="width:100%;height:600px;"></div>
+
+		<script>
+
+		function myMap(){
+			var myCenter = new google.maps.LatLng(-36.241887, -63.647805);
+			var mapCanvas = document.getElementById("map");
+			var mapOptions = {center: myCenter, zoom:9};
+			var map = new google.maps.Map(mapCanvas, mapOptions);
+			var marker = new google.maps.Marker({position:myCenter});
+
+			marker.setMap(map);
+
+			google.maps.event.addListener(marker, 'click' ,function() {
+				map.setZoom(9);
+				map.setCenter(marker.getPosition());
+
+			
+			});
+
+		}
+
+
+		
+		</script>
+
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhWZ-Ld1N1ARGtT53G5R4huhfectES0D0&callback=myMap"></script>
+		<!--
+		To use this code on your website, get a free API key from Google.
+		Read more at: https://www.w3schools.com/graphics/google_maps_basic.asp
+		-->
+			
+		</body>
+		</html>
+
+
+
+
